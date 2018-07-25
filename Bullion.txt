@@ -1,0 +1,24 @@
+1、
+given a=1, b=2
+when 比较a与b的长度
+then 2
+
+given a=1mm, b=2mm
+when 比较a与b的长度
+then 2mm
+
+given a=1m, b=2m
+when 比较a与b的长度
+then 2m
+
+given a=1m, b=2dm
+when 比较a与b的长度
+then 1m
+
+given a=2m, b=2dm
+when 比较a与b的长度
+then 2m
+
+given a=2m, b=20dm
+when 比较a与b的长度
+then 金条长度相同
