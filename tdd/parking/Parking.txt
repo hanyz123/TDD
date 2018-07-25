@@ -1,0 +1,19 @@
+1、
+given 存车
+when 存车成功
+then 1
+
+2、
+given 存车
+when 存车失败
+then 0
+
+3、
+given 取车
+when 取车成功
+then 1
+
+4、
+given 取车
+when 取车失败
+then 0

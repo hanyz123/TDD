@@ -1,4 +1,9 @@
 package hyz.demo;
+enum Unit {
+	CM(1),
+	DM(10),
+	M(100)
+}
 public class Bullion {
 	private static final String UNIT_CM = "cm";
 	private static final String UNIT_DM = "dm";
