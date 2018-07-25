@@ -1,19 +1,19 @@
 1、
-given 存车
-when 存车成功
-then 1
+given 我有一个停车场
+when 我要停车，有可用车位
+then 停车成功
 
 2、
-given 存车
-when 存车失败
-then 0
+given 我有一个停车场
+when 我要停车，无可用车位
+then 停车失败
 
 3、
-given 取车
-when 取车成功
-then 1
+given 我有一个停车场
+when 我要取车，有车
+then 取车成功
 
 4、
-given 取车
-when 取车失败
-then 0
+given 我有一个停车场
+when 我要取车，无车
+then 取车失败
