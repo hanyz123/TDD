@@ -1,13 +1,20 @@
 package hyz.demo;
-enum Unit {
+enum EnumUnit {
 	CM(1),
 	DM(10),
-	M(100)
+	M(100);
+	
+	private int num;
+	
+	private EnumUnit(int num){
+        this.num=num;
+    }
+	
+	public int getNum(){
+        return num;
+    }
 }
 public class Bullion {
-	private static final String UNIT_CM = "cm";
-	private static final String UNIT_DM = "dm";
-	private static final String UNIT_M = "m";
 	/**
 	 * 
 	 * @param a 金条a长度
@@ -17,36 +24,26 @@ public class Bullion {
 	 * @return
 	 */
 	public String  checkLength(int a, int b , String unit1, String unit2) {
-		int unit_m_a = 0;
-		int unit_m_b = 0;
-		if (unit1.equals(unit2)) {
-			return  (a > b ? a : b) + unit1;			
-		}
-		if (UNIT_CM.equals(unit1)) {
-			unit_m_a  = a;
-		}
-		if (UNIT_CM.equals(unit2)) {
-			unit_m_b  = b;
-		}
-		if (UNIT_DM.equals(unit1)) {
-			unit_m_a  = a * 10;
-		}
-		if (UNIT_DM.equals(unit2)) {
-			unit_m_b  = b * 10;
-		}
-		if (UNIT_M.equals(unit1)) {
-			unit_m_a  = a * 100;
-		}
-		if (UNIT_M.equals(unit2)) {
-			unit_m_b  = b * 100;
-		}
-		if (unit_m_a > unit_m_b) {
-			return a + unit1;
-		}
+		int unit_m_a = getNum(unit1) * a;
+		int unit_m_b = getNum(unit2) * b;
 		if (unit_m_a == unit_m_b) {
 			return "金条长度相同";
 		} else {
-			return b + unit2;
+			String unit = unit_m_a > unit_m_b ? unit1 : unit2;
+			return  (unit_m_a > unit_m_b ? a : b) + unit;			
+		}
+	}
+	
+	public int getNum(String unit){
+		switch (unit){
+			case "cm":
+				return EnumUnit.CM.getNum();
+			case "dm":
+				return EnumUnit.DM.getNum();
+			case "m":
+				return EnumUnit.M.getNum();
+		default :
+			return 0;
 		}
 	}
 }

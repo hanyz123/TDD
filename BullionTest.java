@@ -4,24 +4,14 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 public class BullionTest {
 	@Test
-	public void should_return_2_input_1_2_mm () {
-		int aLen = 1;
-		String unit1 = "mm";
-		int bLen = 2;
-		String unit2 = "mm";
-		Bullion bullion = new Bullion();
-		String  result = bullion.checkLength(aLen, bLen, unit1, unit2);
-		assertEquals("2mm", result);
-	}
-	@Test
 	public void should_return_2_input_1_2_m () {
 		int aLen = 1;
-		String unit1 = "mm";
+		String unit1 = "cm";
 		int bLen = 2;
-		String unit2 = "mm";
+		String unit2 = "cm";
 		Bullion bullion = new Bullion();
 		String  result = bullion.checkLength(aLen, bLen, unit1, unit2);
-		assertEquals("2mm", result);
+		assertEquals("2cm", result);
 	}
 	
 	@Test
