@@ -25,7 +25,7 @@ public class Parking {
 	 * @return
 	 */
 	public String parkingUp (String car) {
-		System.out.println("==剩余车位==" + ResiduaParkingSpace);
+//		System.out.println("==剩余车位==" + ResiduaParkingSpace);
 		if (ResiduaParkingSpace > 0) {
 			list.add(car);
 			ResiduaParkingSpace --;
@@ -41,6 +41,7 @@ public class Parking {
 	 */
 	public String pickUpCar(String car) {
 		if (list.contains(car)) {
+			ResiduaParkingSpace ++;
 			return "1";
 		}
 		return "0";

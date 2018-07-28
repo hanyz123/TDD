@@ -24,6 +24,18 @@ public class ParkingTest {
 		assertEquals("1", parking.pickUpCar(myCar1));
 	}
 	@Test
+	public void should_return_1_input_parkingUp_1 () {
+		Parking parking = new Parking(10, 1);
+		String myCar = "0001";
+		assertEquals("1", parking.parkingUp(myCar));
+		String myCar1 = "0002";
+		assertEquals("0", parking.parkingUp(myCar1));
+		String myCar2 = "0001";
+		assertEquals("1", parking.pickUpCar(myCar2));
+		String myCar3 = "0002";
+		assertEquals("1", parking.parkingUp(myCar3));
+	}
+	@Test
 	public void parkingUp_And_pickUpCar_1 () {
 		Parking parking = new Parking(10, 1);
 		String myCar1 = "0001";
